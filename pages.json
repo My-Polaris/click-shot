@@ -1,17 +1,70 @@
 {
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-app"
-		}
-	}],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"app-plus": {
-			"background": "#efeff4"
-		}
-	}
+  "pages": [{
+    "path": "pages/home/home",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/pub/pub",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/works/works",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/my/my",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }],
+  "globalStyle": {
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "咔嚓摄引",
+      "navigationBarBackgroundColor": "#F8F8F8",
+      "backgroundColor": "#FFFFFF",
+      
+      "backgroundTextStyle":"dark",
+      "enablePullDownRefresh":true
+    },
+  "tabBar": {
+    "color": "#393e46",
+    "selectedColor": "#0D7375",
+    "backgroundColor":"#dbe2ef",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/tab_icons/home.png",
+        "selectedIconPath": "static/tab_icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/pub/pub",
+        "text": "发布",
+        "iconPath": "static/tab_icons/pub.png",
+        "selectedIconPath": "static/tab_icons/pub-active.png"
+      },
+      {
+        "pagePath": "pages/works/works",
+        "text": "作品",
+        "iconPath": "static/tab_icons/works.png",
+        "selectedIconPath": "static/tab_icons/works-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tab_icons/my.png",
+        "selectedIconPath": "static/tab_icons/my-active.png"
+      }
+    ]
+  }
 }
