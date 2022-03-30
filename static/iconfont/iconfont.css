@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2651011 */
+  src: url('/static/iconfont/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-renzhengmote:before {
+  content: "\e611";
+}
+
+.icon-_shoucang:before {
+  content: "\e60f";
+}
+
+.icon-_dianzan:before {
+  content: "\e609";
+}
+
+.icon-renzhengsheyingshi:before {
+  content: "\e60e";
+}
+
+.icon-fabuzuopin:before {
+  content: "\e60b";
+}
+
+.icon-fuwufeijianmian:before {
+  content: "\e62c";
+}
+
+.icon-shouye1:before {
+  content: "\e65d";
+}
+
+.icon-zhuye:before {
+  content: "\e607";
+}
+
+.icon-shezhi:before {
+  content: "\e64c";
+}
+
+.icon-cuowu:before {
+  content: "\e653";
+}
+
+.icon-zhengque-:before {
+  content: "\e624";
+}
+
+.icon-nan:before {
+  content: "\e638";
+}
+
+.icon-huiyuan:before {
+  content: "\e613";
+}
+
+.icon-shanchu:before {
+  content: "\e628";
+}
+
+.icon-guanyuwomen:before {
+  content: "\e673";
+}
+
+.icon-shenfenrenzheng:before {
+  content: "\e63f";
+}
+
+.icon-hezuo:before {
+  content: "\e618";
+}
+
+.icon-dongtaituiguang:before {
+  content: "\e70e";
+}
+
+.icon-fabudongtai:before {
+  content: "\e60a";
+}
+
+.icon-bangzhuzhongxin:before {
+  content: "\e629";
+}
+
+.icon-huidaodingbu:before {
+  content: "\e775";
+}
+
+.icon-fabu:before {
+  content: "\e694";
+}
+
+.icon-shenglvehao:before {
+  content: "\e708";
+}
+
+.icon-huiyuan1:before {
+  content: "\e6a9";
+}
+
+.icon-nv:before {
+  content: "\e60c";
+}
+
+.icon-tags-fill:before {
+  content: "\eba1";
+}
+
+.icon-wodexiaoxi:before {
+  content: "\e602";
+}
+
+.icon-wodejiaoyi:before {
+  content: "\e603";
+}
+
+.icon-xiangyou:before {
+  content: "\e604";
+}
+
+.icon-yishiming:before {
+  content: "\e605";
+}
+
+.icon-xiangyou2:before {
+  content: "\e606";
+}
+
+.icon-zuopin:before {
+  content: "\e608";
+}
+
+.icon-shouye:before {
+  content: "\e601";
+}
+
+.icon-tubiaozhizuomoban:before {
+  content: "\e60d";
+}
+
+.icon-mudi:before {
+  content: "\e6d1";
+}
+
+.icon-dianzan:before {
+  content: "\e636";
+}
+
+.icon-shoucang:before {
+  content: "\e63a";
+}
+
+.icon-xiangxia:before {
+  content: "\e600";
+}
+
+.icon-dingwei:before {
+  content: "\e627";
+}
+

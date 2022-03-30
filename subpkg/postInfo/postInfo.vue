@@ -1,6 +1,6 @@
 <template>
   <view>
-    My
+    动态详情页面
   </view>
 </template>
 
@@ -9,14 +9,11 @@
     data() {
       return {
         
-      }
-    },
-    methods: {
-      
+      };
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>

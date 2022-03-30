@@ -1,0 +1,21 @@
+{
+  "name": "click-shot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:mypolaris/click-shot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1",
+    "better-mock": "^0.3.3",
+    "node-sass": "^7.0.1"
+  },
+  "description": ""
+}

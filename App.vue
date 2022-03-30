@@ -18,9 +18,12 @@
 	@import '@/uni_modules/uni-scss/index.scss';
 	/* #ifndef APP-NVUE */
 	@import '@/static/customicons.css';
+  /*自定义字体图标*/
+  @import "@/static/iconfont/iconfont.css";
 	// 设置整个项目的背景色
 	page {
 		background-color: #f5f5f5;
+    font-size: 32rpx;//全局默认字体大小
 	}
 
 	/* #endif */
