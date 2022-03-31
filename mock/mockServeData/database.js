@@ -21,11 +21,15 @@ function User() {
   this.sex = Mock.Random.integer(0, 1);//性别
   this.tagList = tagList;//0是已实名,1是自由摄影师,2是认证模特,3是会员
   
-  //用户的一些行为路径
+  //用户的一些行为路径,有用Set的想法,但Set和Map的深度克隆还得另写,所以先用数组吧
   this.pubPostList = [];//发布过的动态
   this.pubWorkList = [];//发布过的作品
+  this.focusUserList = [];//关注过的博主
+  this.fansUserList = [];//粉丝用户列表
   this.everLikePost = [];//喜欢过的动态的id
   this.everStarPost = [];//收藏过的动态的id
+  this.everLikeWork = [];//喜欢过的作品的id
+  this.everStarWork = [];//收藏过的作品的id
 }
 
 /*动态的构造函数*/

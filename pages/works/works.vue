@@ -41,6 +41,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import ButtonGroup from '@/components/ButtonGroup/ButtonGroup.vue'
   import GoTop from '@/components/GoTop/GoTop.vue'
   export default {
@@ -57,7 +58,7 @@
       }
     },
     components: { ButtonGroup, GoTop },
-    onLoad() {
+    onShow() {
       this.getWorkList();
     },
     // 触底的事件
@@ -81,6 +82,19 @@
       // 2. 重新发起请求
       this.getWorkList(() => uni.stopPullDownRefresh())
     },
+    computed: {
+      ...mapState('m_user', ['userinfo','token']),
+    },
+    watch: {
+      // 本来是想监听userinfo的变化去更新作品列表的,现在直接用onShow生命周期代替onLoad,每次展示页面都会重新加载
+      // userinfo: {
+      //   handler: function() {
+      //     this.getWorkList();
+      //   },
+      //   // 首次获取也得监听
+      //   deep: true,
+      // }
+    },
     methods: {
       //获取作品数据
       async getWorkList(cb) {
@@ -88,7 +102,8 @@
         const params = {
           selectId: this.selectId,
           pageNum: this.pageNum,
-          pageSize: this.pageSize
+          pageSize: this.pageSize,
+          myId: this.userinfo.id,
         }
         const {
           data: res
@@ -119,6 +134,7 @@
       },
       // 点赞按钮
       likeChange(item) {
+        if(this.token=='') return uni.$showMsg('要登录才能点赞噢');
         if (item.work.isLike) console.log("发起点赞作品 " + item.work.id + " 的请求")
         else console.log("发起取消点赞作品 " + item.work.id + " 的请求")
         item.work.isLike = !item.work.isLike

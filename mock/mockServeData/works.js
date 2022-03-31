@@ -4,9 +4,10 @@ import Mock from 'better-mock/dist/mock.mp.js'
 import DataBase from '@/mock/mockServeData/database.js'
 
 /*查询数据库,生成该页面所需的作品列表*/
-function queryWorkList(selectId,pageNum,pageSize) {
+function queryWorkList(selectId,pageNum,pageSize,myId) {//作品筛选id,页号,每页的大小,查询者的id
  let workList = []
- for(let dbWork of DataBase.workList){
+ let lookPerson = DataBase.userList.find(x => x.id == myId);//找到查看的人,用于确定是否点赞了x作品,先不处理
+ for(let dbWork of DataBase.workList){//遍历数据库的作品列表
    //找到发布者
    let dbUser = DataBase.userList.find(item => item.id == dbWork.pubId);
    
@@ -37,8 +38,8 @@ export default {
   // 获取作品列表
   getWorkList: config => {
     const { params } = config.body;
-    const { selectId,pageNum,pageSize } = params;
-    let { total,pageList } = queryWorkList(selectId,pageNum,pageSize);
+    const { selectId,pageNum,pageSize,myId } = params;
+    let { total,pageList } = queryWorkList(selectId,pageNum,pageSize,myId);
     //测试一下瀑布流
     pageList[1].work.pic = "https://s2.loli.net/2021/12/09/HyUdIlbZPABW2kS.jpg"
     pageList[2].work.pic = "https://s2.loli.net/2021/12/09/6icfMBKpN8WdGau.jpg"
