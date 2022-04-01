@@ -1,10 +1,10 @@
 <template>
   <!-- 表单项组件,需要传入的参数
-    person:{pic:用户头像地址,name:用户名,sex:性别,tagList:标签列表}
+    person:{id,pic:用户头像地址,name:用户名,sex:性别,tagList:标签列表}
     post:{title:动态标题,content:动态描述,pictures:图片组}-->
   <view class="post-item">
     <!-- 使用PersonItem组件,不需要关注按钮 -->
-    <navigator url="/subpkg/personInfo/personInfo">
+    <navigator :url="'/subpkg/personInfo/personInfo?id='+person.id" v-if="isShowPersonItem">
       <person-item :person="person" :ifFocus="false"></person-item>
     </navigator>
 
@@ -27,7 +27,7 @@
       </view>
     </navigator>
     <view class="post-last">
-      <text>阅读量:{{post.readNum}}万</text>
+      <text>阅读量:{{post.readNum}}</text>
     </view>
   </view>
 </template>
@@ -43,14 +43,18 @@
     },
     components: { PersonItem },
     props: {
+      isShowPersonItem:{
+        type:Boolean,
+        default:true,
+      },
       person: {
         type: Object,
-        isrequired: true
+        default: {}
       },
       post: {
         type: Object,
-        isrequired: true,
-      }
+        default: {},
+      },
     }
   }
 </script>
@@ -58,8 +62,9 @@
 <style lang="scss" scoped>
   /* 动态展示区 */
   .post-item {
-    margin: 10rpx 2rpx;
-    height: 580rpx;
+    margin: 5rpx 2rpx;
+    padding: 7rpx 0rpx;
+    // height: 580rpx;
     background-color: white;
     border-radius: 30rpx;
     .navigator-toPost {//没有inline样式图片显示不出来
@@ -97,7 +102,7 @@
       }
       .post-pic {
         width: 100%;
-        height: 100%;
+        height: 265rpx;
         overflow: hidden;
         /* 规定段落中的文本不进行换行 */
         white-space: nowrap;

@@ -2,33 +2,37 @@
   "pages": [{
     "path": "pages/home/home",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "咔嚓摄引",
       "onReachBottomDistance": 150,
       "enablePullDownRefresh": true,
-      "backgroundColor": "#F8F8F8"
+      "backgroundColor": "#F8F8F8",
+      "navigationBarBackgroundColor": "#393e46"
     }
 
   }, {
     "path": "pages/pub/pub",
     "style": {
-      "navigationBarTitleText": "",
-      "enablePullDownRefresh": false
+      "navigationBarTitleText": "咔嚓摄引",
+      "enablePullDownRefresh": false,
+      "navigationBarBackgroundColor": "#393e46"
     }
 
   }, {
     "path": "pages/works/works",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "咔嚓摄引",
       "onReachBottomDistance": 150,
       "enablePullDownRefresh": true,
-      "backgroundColor": "#F8F8F8"
+      "backgroundColor": "#F8F8F8",
+      "navigationBarBackgroundColor": "#393e46"
     }
 
   }, {
     "path": "pages/my/my",
     "style": {
-      "navigationBarTitleText": "",
-      "enablePullDownRefresh": false
+      "navigationBarTitleText": "咔嚓摄引",
+      "enablePullDownRefresh": false,
+      "navigationBarBackgroundColor": "#393e46"
     }
 
   }],
@@ -38,7 +42,7 @@
                     "path" : "search/search",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "用户搜索",
                     "enablePullDownRefresh": false
                 }
                 
@@ -48,7 +52,8 @@
                     "style" :                                                                                    
                 {
                     "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
+                    "enablePullDownRefresh": false,
+                    "navigationBarBackgroundColor": "#393e46"
                 }
                 
                 }
@@ -56,7 +61,7 @@
                     "path" : "postInfo/postInfo",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "动态详情",
                     "enablePullDownRefresh": false
                 }
                 
@@ -65,7 +70,7 @@
                     "path" : "workInfo/workInfo",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "作品详情",
                     "enablePullDownRefresh": false
                 }
                 
@@ -74,7 +79,7 @@
                     "path" : "pubWork/pubWork",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "发布作品",
                     "enablePullDownRefresh": false
                 }
                 
@@ -83,7 +88,7 @@
                     "path" : "pubPost/pubPost",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "发布动态",
                     "enablePullDownRefresh": false
                 }
                 
@@ -92,7 +97,7 @@
                     "path" : "editInfo/editInfo",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "编辑资料",
                     "enablePullDownRefresh": false
                 }
                 
@@ -101,7 +106,7 @@
                     "path" : "followList/followList",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "关注列表",
                     "enablePullDownRefresh": false
                 }
                 
@@ -110,7 +115,7 @@
                     "path" : "fansList/fansList",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "粉丝列表",
                     "enablePullDownRefresh": false
                 }
                 
@@ -119,8 +124,9 @@
                     "path" : "appplyVip/appplyVip",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
+                    "navigationBarTitleText": "开通会员",
+                    "enablePullDownRefresh": false,
+                    "navigationBarBackgroundColor": "#393e46"
                 }
                 
                 }
@@ -128,8 +134,9 @@
                     "path" : "myInfo/myInfo",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
+                    "navigationBarTitleText": "个人主页",
+                    "enablePullDownRefresh": false,
+                    "navigationBarBackgroundColor": "#393e46"
                 }
                 
                 }
@@ -137,7 +144,7 @@
                     "path" : "stars/stars",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "我的收藏与点赞",
                     "enablePullDownRefresh": false
                 }
                 
@@ -146,7 +153,7 @@
                     "path" : "dealList/dealList",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "我的交易",
                     "enablePullDownRefresh": false
                 }
                 
@@ -155,7 +162,7 @@
                     "path" : "check/check",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "身份认证",
                     "enablePullDownRefresh": false
                 }
                 
@@ -164,7 +171,7 @@
                     "path" : "message/message",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "我的消息",
                     "enablePullDownRefresh": false
                 }
                 
@@ -173,7 +180,7 @@
                     "path" : "aboutUs/aboutUs",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "关于我们",
                     "enablePullDownRefresh": false
                 }
                 
@@ -182,7 +189,7 @@
                     "path" : "help/help",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "帮助中心",
                     "enablePullDownRefresh": false
                 }
                 
@@ -191,7 +198,16 @@
                     "path" : "set/set",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "设置",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "appointSub/appointSub",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "约拍信息提交",
                     "enablePullDownRefresh": false
                 }
                 

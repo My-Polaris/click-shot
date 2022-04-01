@@ -7,21 +7,21 @@ export default {
     // 登录成功之后的 token 字符串
     token: uni.getStorageSync('token') || '',
     // 用户的基本信息
-    userinfo: JSON.parse(uni.getStorageSync('userinfo') || '{}')
+    myinfo: JSON.parse(uni.getStorageSync('myinfo') || '{}')
   }),
 
   // 方法
   mutations: {
     // 更新用户的基本信息
-    updateUserInfo(state, userinfo) {
-      state.userinfo = userinfo
-      // 通过 this.commit() 方法，调用 m_user 模块下的 saveUserInfoToStorage 方法，将 userinfo 对象持久化存储到本地
+    updateUserInfo(state, myinfo) {
+      state.myinfo = myinfo
+      // 通过 this.commit() 方法，调用 m_user 模块下的 saveUserInfoToStorage 方法，将 myinfo 对象持久化存储到本地
       this.commit('m_user/saveUserInfoToStorage')
     },
 
-    // 将 userinfo 持久化存储到本地
+    // 将 myinfo 持久化存储到本地
     saveUserInfoToStorage(state) {
-      uni.setStorageSync('userinfo', JSON.stringify(state.userinfo))
+      uni.setStorageSync('myinfo', JSON.stringify(state.myinfo))
     },
 
     // 更新 token 字符串

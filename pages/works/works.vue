@@ -83,11 +83,11 @@
       this.getWorkList(() => uni.stopPullDownRefresh())
     },
     computed: {
-      ...mapState('m_user', ['userinfo','token']),
+      ...mapState('m_user', ['myinfo','token']),
     },
     watch: {
-      // 本来是想监听userinfo的变化去更新作品列表的,现在直接用onShow生命周期代替onLoad,每次展示页面都会重新加载
-      // userinfo: {
+      // 本来是想监听myinfo的变化去更新作品列表的,现在直接用onShow生命周期代替onLoad,每次展示页面都会重新加载
+      // myinfo: {
       //   handler: function() {
       //     this.getWorkList();
       //   },
@@ -103,7 +103,7 @@
           selectId: this.selectId,
           pageNum: this.pageNum,
           pageSize: this.pageSize,
-          myId: this.userinfo.id,
+          myId: this.myinfo.id,
         }
         const {
           data: res

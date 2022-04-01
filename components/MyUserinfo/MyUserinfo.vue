@@ -3,16 +3,16 @@
     <!-- 个人信息栏 -->
     <view class="base-info">
       <navigator class="person-pic" url="/subpkg/editInfo/editInfo">
-        <image :src="userinfo.pic" mode="aspectFill"></image>
+        <image :src="myinfo.pic" mode="aspectFill"></image>
       </navigator>
-      <view class="person-name"><text>{{userinfo.name}}</text></view>
+      <view class="person-name"><text>{{myinfo.name}}</text></view>
     </view>
     <view class="focus-and-fans">
       <navigator url="/subpkg/followList/followList">
-        <text style="white-space:pre-wrap">关注 {{userinfo.focusUserList.length}}</text>
+        <text style="white-space:pre-wrap">关注 {{myinfo.focusUserList.length}}</text>
       </navigator>
       <navigator url="/subpkg/fansList/fansList" class="navigator-toFansList">
-        <text style="white-space:pre-wrap">粉丝 {{userinfo.fansUserList.length}}</text>
+        <text style="white-space:pre-wrap">粉丝 {{myinfo.fansUserList.length}}</text>
       </navigator>
     </view>
     <view class="vip-entry">
@@ -62,7 +62,7 @@
       };
     },
     computed: {
-      ...mapState('m_user', ['userinfo'])
+      ...mapState('m_user', ['myinfo'])
     }
   }
 </script>
