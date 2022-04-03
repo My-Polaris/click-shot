@@ -1,6 +1,14 @@
+/*导航栏组件
+传入参数:
+tabList导航栏对象数组:id导航项编号,text导航项文本
+selectId:选中按钮的id号
+监听事件:
+changeTab事件,传出的参数为所点击导航项的id编号
+*/
 <template>
   <view class="tabs">
-    <view v-for="(item,index) in tabList" :key="index" :class="['tab-item',selectId==item.id?'active':'']" @click="changeTab(item.id)">
+    <view v-for="(item,index) in tabList" :key="index" :class="['tab-item',selectId==item.id?'active':'']"
+      @click="changeTab(item.id)">
       {{item.text}}
     </view>
   </view>
@@ -14,20 +22,20 @@
 
       };
     },
-    emits:['changeTab'],
-    props:{
-      tabList:{
-        type:Array,
-        default:{},
+    emits: ['changeTab'],
+    props: {
+      tabList: {
+        type: Array,
+        default: {},
       },
-      selectId:{
-        type:Number,
-        default:0
+      selectId: {
+        type: Number,
+        default: 0
       }
     },
-    methods:{
+    methods: {
       changeTab(id) {
-        this.$emit('changeTab',id);
+        this.$emit('changeTab', id);
       }
     }
   }
@@ -44,7 +52,6 @@
     border-top-left-radius: 35rpx;
     border-top-right-radius: 35rpx;
 
-    /* background-color: rosybrown; */
     .tab-item {
       font-size: 33rpx;
       display: flex;

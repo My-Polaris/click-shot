@@ -1,4 +1,12 @@
-// 按钮组组件,传入itemList数组(id,text),selectId表示选中按钮的id号,每个按钮的height,width
+/*按钮组组件
+  传入参数:
+    itemList数组:id,text
+    selectId:选中按钮的id号
+    height:每个按钮的高度,默认100rpx
+    width:每个按钮的宽度,默认210rpx
+  监听事件:
+    buttonChange事件:传出所选中按钮的id
+  */
 <template>
   <view>
     <view class="button-title">

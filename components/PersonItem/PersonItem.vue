@@ -1,3 +1,11 @@
+/*用户个人信息组件
+  传入参数:
+    person对象:pic用户头像,name用户名,sex性别(0或1),tagList标签数组
+    ifFocus:是否显示关注按钮,默认显示
+    focus:是否被关注,默认未关注
+  监听事件:
+    submitFocus:点击了关注or取消关注按钮,传参为0表示发起关注,传参为1表示取消关注
+*/
 <template>
   <!-- 头部状态栏,传入person数据,传入ifFocus决定是否显示可关注的按钮 -->
   <view class="person-item">
@@ -38,10 +46,10 @@
     
     <!-- 关注按钮 -->
     <view class="focus-area" v-if="ifFocus">
-      <view class="focus-it" v-if="focus" @click="submitFocus">
+      <view class="focus-it" v-if="!focus" @click="submitFocus(0)">
         <button size="mini">关注</button>
       </view>
-      <view class="not-focus-it" v-if="!focus" @click="submitFocus">
+      <view class="not-focus-it" v-if="focus" @click="submitFocus(1)">
         <button size="mini">已关注</button>
       </view>
     </view>
@@ -53,25 +61,27 @@
     name: "PersonItem",
     data() {
       return {
-        focus: true,
+        
       };
     },
     props: {
       person: {
         type: Object,
-        isrequired: true
+        default:{},
       },
       ifFocus: {
         type: Boolean,
-        isrequired: false,
         default: true,
+      },
+      focus:{
+        type:Boolean,
+        default:false,
       }
     },
+    emits:['submitFocus'],
     methods:{
-      submitFocus(){
-        if(this.focus)  console.log("发起关注用户 "+ this.person.id +" 的请求")
-        else   console.log("发起取关用户 "+ this.person.id +" 的请求")
-        this.focus=!this.focus
+      submitFocus(index){
+        this.$emit('submitFocus',index);
       }
     }
   }
@@ -83,8 +93,9 @@
     justify-content: space-between;
     align-items: center;
     height: 150rpx;
-    width: 90%;
+    width: 100%;
     padding: 0rpx 20rpx;
+    background-color: white;
 
     //个人信息栏
     .person-info {
@@ -137,7 +148,7 @@
       display: flex;
       justify-content: flex-end;
       align-self: center;
-      padding-right: 10rpx;
+      margin-right: 60rpx;
       /* background-color: seagreen; */
       .focus-it {
         display: flex;

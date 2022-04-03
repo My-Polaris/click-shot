@@ -15,8 +15,10 @@ const BaseInfo = {
   goalList: ["目的", "找摄影师", "找模特", "找网店商家"], //目的列表
   sexList: ['性别', '女', '男'], //性别列表
   region: ['全部', '全部', '全部'], //默认地区设置
-  buttonList: [{ id: 0, text: "收费区" }, { id: 1, text: "付费区" }, { id: 2, text: "互勉区" }], //按钮类型列表
+  postButtonList: [{ id: 0, text: "收费区" }, { id: 1, text: "付费区" }, { id: 2, text: "互勉区" }], //按钮类型列表
   moneyTypeList: ['收费', '付费', '互勉'],
+  //作品相关
+  workButtonList: [{ id: 0, text: "综合" }, { id: 1, text: "最热" }, { id: 2, text: "最新" }]
 }
 
 /*用户的构造函数*/
@@ -64,10 +66,12 @@ function Post(userId) {
   this.pubId = userId; //发布者Id
   this.id = Mock.Random.guid(); //该动态的id
   this.goalIndex = Mock.Random.integer(1, 3); //动态的目的
+  this.goalText = BaseInfo.goalList[this.goalIndex];//目的文本
   this.moneyType = Mock.Random.integer(0, 1); //收费还是付费,暂不生成互勉
   this.money = Mock.Random.integer(200, 500); //涉及的金额
+  this.moneyText = BaseInfo.moneyTypeList[this.moneyType]+this.money+"元";//收付费文本
   this.pictures = pictures; //照片组
-  this.title =BaseInfo.goalList[this.goalIndex]+","+BaseInfo.moneyTypeList[this.moneyType]+this.money+"元",
+  this.title =this.goalText+","+this.moneyText,
   this.content = content; //文案
   this.readNum = Mock.Random.integer(2000, 9000); //阅读量(千,返回万的话要自己后台处理加上'万'字)
   this.likeNum = Mock.Random.integer(2000, 9000); //点赞量
@@ -124,7 +128,3 @@ export default {
   workList,
   BaseInfo
 }
-
-// console.log(userList);
-// console.log(postList);
-// console.log(workList);

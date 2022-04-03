@@ -1,6 +1,12 @@
+/*作品栏组件,类似于PostItem组件
+  传入参数:
+    work对象:id作品编号,title作品标题,pictures作品图片数组,readNum阅读量
+  监听事件:
+    无
+*/
 <template>
   <view class="work-item">
-    <navigator url="/subpkg/workInfo/workInfo">
+    <navigator :url="'/subpkg/workInfo/workInfo?id='+work.id">
       <view class="work-info">
         <view class="work-text">
           <text>{{work.title}}</text>

@@ -19,6 +19,7 @@ function queryPostList(goal,sex,region,type,pageNum,pageSize) {
       tagList:JSON.parse(JSON.stringify(dbUser.tagList)),//数组需要深拷贝
     };
     let post = {//动态的信息
+      id:dbPost.id,
       goalIndex:dbPost.goalIndex,
       moneyType:dbPost.moneyType,
       title:dbPost.title,
@@ -51,7 +52,7 @@ export default {
   //获取基本数据
   getBaseList: config => {
     let baseInfo = JSON.parse(JSON.stringify(DataBase.BaseInfo));//深拷贝平台基础数据
-    let { swiperList,goalList,sexList,region,buttonList } = baseInfo;
+    let { swiperList,goalList,sexList,region,postButtonList } = baseInfo;
     console.log("成功获取页面基础信息~")
     return {
       meta: {
@@ -63,7 +64,7 @@ export default {
         goalList, //商家类型数据
         sexList, //性别类型数据
         region, //默认地区设置
-        buttonList, //按钮类型列表
+        buttonList:postButtonList, //按钮类型列表
       }
     }
   },

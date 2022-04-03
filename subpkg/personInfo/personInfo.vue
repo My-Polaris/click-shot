@@ -41,10 +41,10 @@
         </view>
         <view class="button2">
           <view class="appoint-it">
-            <navigator url="/subpkg/appointSub/appointSub">约拍他</navigator>
+            <navigator :url="'/subpkg/appointSub/appointSub?id='+userInfo.id">约拍他</navigator>
           </view>
-          <view class="focus-item focus" v-if="!focus" @click="requestFocus(0)">关注</view>
-          <view class="focus-item cancel-focus" v-if="focus" @click="requestFocus(1)">已关注</view>
+          <view class="focus-item focus" v-if="!focus" @click="submitFocus(0)">关注</view>
+          <view class="focus-item cancel-focus" v-if="focus" @click="submitFocus(1)">已关注</view>
         </view>
       </view>
     </view>
@@ -65,33 +65,24 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import PostItem from '@/components/PostItem/PostItem.vue'
   import Tabs from '@/components/Tabs/Tabs.vue'
   import WorkItem from '@/components/WorkItem/WorkItem.vue'
+  import infoCommon from '@/mixin/infoCommon.js'
   export default {
     data() {
       return {
-        focus: false,
         tabList: [{ id: 0, text: "约拍动态" }, { id: 1, text: "作品相册" }],
         selectId: 0, //选中的tab栏
-        userInfo: {}, //个人详情
         pubPostList: [], //发布的动态
         pubWorkList: [], //发布的作品
       };
     },
+    mixins:[ infoCommon ],//info页面通用逻辑
     components: { PostItem, Tabs, WorkItem },
-    onLoad(options) {
-      let myId = this.myinfo.id ? this.myinfo.id : -1;//如果没登陆的话传的myId是-1
-      let userId = options.id; //获取对应用户的id
-      this.getUserInfo(myId, userId);
-    },
-    computed: {
-      ...mapState('m_user', ['myinfo', 'token'])
-    },
     methods: {
       //获取用户信息
-      async getUserInfo(myId, userId) {
+      async initPage(myId, userId) {
         const params = {
           myId,
           userId
@@ -106,14 +97,6 @@
         this.pubPostList = res.data.pubPostList;
         this.pubWorkList = res.data.pubWorkList;
         this.focus = res.data.focus;
-      },
-      //请求关注或取消关注
-      async requestFocus(index) {
-        //index为0表示请求关注,为1表示请求取消关注
-        if (this.token == '') return uni.$showMsg('要登录才能关注噢');
-        if (index == 0) console.log("发起关注用户  " + this.userInfo.id + " 的请求")
-        else console.log("发起取消关注用户 " + this.userInfo.id + " 的请求")
-        this.focus = !this.focus
       },
       // 标签栏改变函数
       changeTab(id) {

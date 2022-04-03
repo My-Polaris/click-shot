@@ -1,6 +1,12 @@
+/*回到顶部组件
+  传入参数:
+    floorstatus:是否显示回到顶部的按钮,默认为true,即显示
+  监听事件:
+    无
+*/
 <template>
   <!-- 回到顶部按钮 -->
-  <view class="goTop" @click="goTop">
+  <view class="goTop" @click="goTop" v-if="floorstatus">
     <uni-icons custom-prefix="iconfont" type="icon-huidaodingbu" color="#666666" size="45"></uni-icons>
   </view>
 </template>
@@ -10,8 +16,14 @@
     name: "GoTop",
     data() {
       return {
-        floorstatus: false
+        
       };
+    },
+    props:{
+      floorstatus:{
+        type:Boolean,
+        default:true,
+      }
     },
     methods: {
       //回到顶部

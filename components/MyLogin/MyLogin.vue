@@ -1,3 +1,10 @@
+/*登陆界面:点击登陆后会发起登陆的ajax请求,ajax地址为/api/login/userData,将获得的userInfo与token存入vuex
+  在发起ajax前会先尝试获取微信用户的信息,允许后会获取微信用户的信息并发起ajax
+  传入参数:
+    无
+  监听事件:
+    无
+*/
 <template>
   <view class="login-container">
     <!-- 提示登录的图标 -->

@@ -1,3 +1,13 @@
+/*动态栏组件,内嵌套了PersonItem用户个人信息组件,不过不带关注按钮,因此也无需监听其内部的事件
+  传入参数:
+    isShowPersonItem:是否展示PersonItem组件,默认展示
+    person对象:
+      PersonItem组件所需: pic用户头像,name用户名,sex性别(0或1),tagList标签数组
+      本身所需: id用户编号,
+    post对象:id动态编号,title动态标题,content动态描述,pictures动态图片数组,readNum动态阅读量
+  监听事件:
+    无
+*/
 <template>
   <!-- 表单项组件,需要传入的参数
     person:{id,pic:用户头像地址,name:用户名,sex:性别,tagList:标签列表}
@@ -9,7 +19,7 @@
     </navigator>
 
     <!-- 消息栏 -->
-    <navigator url="/subpkg/postInfo/postInfo" class="navigator-toPost">
+    <navigator :url="'/subpkg/postInfo/postInfo?id='+post.id" class="navigator-toPost">
       <view class="post-info">
         <view class="post-request">
           <text>{{post.title}}</text>

@@ -1,3 +1,9 @@
+/*个人信息组件,登陆成功后展示
+  传入参数:
+    无
+  监听事件:
+    无
+*/
 <template>
   <view class="my">
     <!-- 个人信息栏 -->
@@ -7,14 +13,18 @@
       </navigator>
       <view class="person-name"><text>{{myinfo.name}}</text></view>
     </view>
+    
+    <!-- 关注与粉丝栏 -->
     <view class="focus-and-fans">
       <navigator url="/subpkg/followList/followList">
-        <text style="white-space:pre-wrap">关注 {{myinfo.focusUserList.length}}</text>
+        <text>关注 {{myinfo.focusUserList.length}}</text>
       </navigator>
-      <navigator url="/subpkg/fansList/fansList" class="navigator-toFansList">
-        <text style="white-space:pre-wrap">粉丝 {{myinfo.fansUserList.length}}</text>
+      <navigator url="/subpkg/fansList/fansList">
+        <text>粉丝 {{myinfo.fansUserList.length}}</text>
       </navigator>
     </view>
+    
+    <!-- 开通会员栏 -->
     <view class="vip-entry">
       <view class="vip-text">
         <image src="https://s2.loli.net/2021/12/09/2wy16mTMxGB5lh8.png">
@@ -25,6 +35,8 @@
         <view class="takeVip-button"><text>开通会员</text></view>
       </navigator>
     </view>
+    
+    <!-- 各种选项栏 -->
     <view class="select-columns">
       <navigator class="cell-item" v-for="(item,index) in selectColumns" :url="item.url" :key="index">
         <uni-icons custom-prefix="iconfont" :type="item.icon" :size="item.size?item.size:25"></uni-icons>
@@ -32,6 +44,8 @@
         <text>{{item.text}}</text>
       </navigator>
     </view>
+    
+    <!-- 底部选项栏 -->
     <view class="bottom-columns">
       <navigator class="bottom-item" url="/subpkg/help/help">
         <uni-icons custom-prefix="iconfont" type="icon-bangzhuzhongxin" size="23"></uni-icons>
@@ -42,6 +56,7 @@
         <text>设置</text>
       </navigator>
     </view>
+  
   </view>
 </template>
 
@@ -108,9 +123,8 @@
         background-color: white;
         color: #222831;
         font-weight: bold;
-        display: flex;
-        align-items: center;
         height: 80%;
+        white-space:pre-wrap;//读取空格
       }
     }
 
