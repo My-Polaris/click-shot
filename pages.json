@@ -212,6 +212,15 @@
                 }
                 
                 }
+                ,{
+                    "path" : "feedback/feedback",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
   }],
   "globalStyle": {

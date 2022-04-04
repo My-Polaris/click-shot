@@ -33,7 +33,7 @@
       <Footer></Footer>
     </view>
     <!-- 底部栏 -->
-    <bottom-item :star="star" :like="like" :likeNum="postInfo.likeNum" :starNum="postInfo.starNum" :userId="userInfo.id"
+    <bottom-item :star="star" :like="like" :likeNum="postInfo.likeNum" :starNum="postInfo.starNum" :userId="userInfo.id+''"
       @changeLike="changeLike" @changeStar="changeStar"></bottom-item>
   </view>
 </template>

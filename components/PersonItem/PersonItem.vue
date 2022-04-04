@@ -12,7 +12,7 @@
     <!-- 个人信息栏 -->
     <view class="person-info">
       <!-- 用户头像 -->
-      <image :src="person.pic" class="person-headphoto" mode="aspectFill">
+      <image :src="person.pic" class="person-headphoto" mode="aspectFill" @click="navigateToPersonInfo">
       </image>
 
       <!-- 基本个人信息 -->
@@ -82,6 +82,11 @@
     methods:{
       submitFocus(index){
         this.$emit('submitFocus',index);
+      },
+      navigateToPersonInfo(){
+        uni.navigateTo({
+          url:'../../subpkg/personInfo/personInfo?id='+this.person.id,
+        })
       }
     }
   }

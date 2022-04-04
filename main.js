@@ -33,6 +33,23 @@ uni.$showMsg = function(title = '数据加载失败！', duration = 1500) {
   })
 }
 
+// 封装的提交表单后的相应弹窗
+uni.$submitSuccess = function(message="提交成功") {
+  uni.showModal({
+    content: message,
+    showCancel: false,
+    success: function (res) {
+    		if (res.confirm) {
+    			uni.navigateBack({
+    			  delta:1,
+    			})
+    		} else if (res.cancel) {
+    			console.log('用户点击取消');
+    		}
+    	}
+  });
+}
+
 Vue.config.productionTip = false
 
 App.mpType = 'app'

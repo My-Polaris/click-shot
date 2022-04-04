@@ -56,7 +56,7 @@
       },
       userId:{
         type:String,
-        default:0,
+        default:"",
       }
     },
     methods:{

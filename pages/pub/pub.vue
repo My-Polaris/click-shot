@@ -1,28 +1,43 @@
 <template>
   <view>
     <!-- 发布动态 -->
-    <navigator class="pub-post" url="/subpkg/pubPost/pubPost" open-type="navigate">
+    <view class="pub-post" @click="navigateToPubPost" open-type="navigate">
       <image src="https://s2.loli.net/2021/12/09/9yeVICMmAY74l3z.png"></image>
       <view class="pub-title">发布动态</view>
-    </navigator>
+    </view>
     
     <!-- 发布作品 -->
-    <navigator class="pub-work" url="/subpkg/pubWork/pubWork" open-type="navigate">
+    <view class="pub-work" @click="navigateToPubWork" open-type="navigate">
       <image src="https://s2.loli.net/2021/12/09/fDvqpaIwuGVdF1Y.png"></image>
       <view class="pub-title">发布作品</view>
-    </navigator>
+    </view>
   </view>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     data() {
       return {
 
       }
     },
+    computed:{
+      ...mapState('m_user',['myinfo','token'])
+    },
     methods: {
-
+      navigateToPubPost(){
+        if (this.token == '') return uni.$showMsg('要登录才能发布噢');
+        uni.navigateTo({
+          url:'/subpkg/pubPost/pubPost',
+        })
+      },
+      navigateToPubWork(){
+        if (this.token == '') return uni.$showMsg('要登录才能发布噢');
+        uni.navigateTo({
+          url:'/subpkg/pubWork/pubWork',
+        })
+      }
     }
   }
 </script>
