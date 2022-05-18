@@ -50,6 +50,7 @@
         // 换取 token
         const { data: loginResult } = await uni.$http.get('/api/login/userData')
         if (loginResult.meta.status !== 200) return uni.$showMsg('登录失败！')
+        console.log("登陆成功!",loginResult)
         this.updateUserInfo(loginResult.data.userInfo);//用户信息存储到vuex里
         this.updateToken(loginResult.data.token);//Token字符串存储到vuex里
         uni.$showMsg('登录成功')

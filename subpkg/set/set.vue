@@ -23,7 +23,7 @@
       return {
         itemList: [
           { name: 'editInfo', url: '/subpkg/editInfo/editInfo', label: '编辑资料' },
-          { name: 'telphone', url: '', label: '手机号' },
+          { name: 'telphone', url: '', label: '手机号',text:'' },
           { name: 'password', url: '', label: '登陆密码', text: '未设置' },
           { name: 'feedback', url: '/subpkg/feedback/feedback', label: '意见反馈' },
           { name: 'aboutUs', url: '/subpkg/aboutUs/aboutUs', label: '关于咔嚓摄引' }
